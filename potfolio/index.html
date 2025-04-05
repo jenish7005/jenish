@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scrip.js"></script>
+</head>
+<body>
+
+    <!-- Loading Animation -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Background Animation -->
+    <div class="animated-bg"></div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <h2 class="logo">My<span>Portfolio</span></h2>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+        <!-- Hero Section -->
+            <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <img src="img.jpeg" alt="Profile Photo" class="profile-img">
+            </div>
+            <div class="hero-right">
+                <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+                <p class="hero-subtitle">A Passionate <span class="highlight">Full-Stack Developer</span></p>
+                <p class="hero-description">I specialize in building scalable web applications with modern technologies. Let's work together to create something amazing!</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary">Hire Me</a>
+                    <a href="resume.pdf" download class="btn secondary">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I'm a full-stack developer passionate about building dynamic and interactive web applications.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">HTML & CSS</div>
+            <div class="skill-card">JavaScript & React</div>
+            <div class="skill-card">Python & Django</div>
+            <div class="skill-card">MongoDB & MySQL</div>
+            <div class="skill-card">Flask & API Development</div>
+            <div class="skill-card">Cloud & DevOps</div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+    
+            <!-- E-Commerce Project -->
+            <div class="project-card">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <h3>🛒 E-Commerce Platform</h3>
+                        <p>A fully functional online store with secure payment integration.</p>
+                    </div>
+                    <div class="project-back">
+                        <p>✅ User authentication & roles</p>
+                        <p>✅ Real-time inventory updates</p>
+                        <p>✅ Secure checkout with Stripe & PayPal</p>
+                        <p>✅ Admin dashboard for order tracking</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Movie Review Project -->
+            <div class="project-card">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <h3>🎬 Movie Review System</h3>
+                        <p>A web scraping-based platform to fetch real-time movie reviews.</p>
+                    </div>
+                    <div class="project-back">
+                        <p>✅ Aggregates ratings & sentiments from multiple sources</p>
+                        <p>✅ Uses NLP for sentiment analysis</p>
+                        <p>✅ Fetches latest reviews using web scraping</p>
+                        <p>✅ Dark mode UI for a cinema-like experience</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Gym Membership Project -->
+            <div class="project-card">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <h3>🏋️ Gym Membership App</h3>
+                        <p>Automated membership approval system with an admin panel.</p>
+                    </div>
+                    <div class="project-back">
+                        <p>✅ Tracks workouts & progress</p>
+                        <p>✅ Membership plans with online payments</p>
+                        <p>✅ Admin panel for approval & management</p>
+                        <p>✅ Mobile-friendly design</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <!-- Your Contact Info -->
+            <div class="my-contact-info">
+                <p><strong>Email:</strong> yourname@example.com</p>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p><strong>Location:</strong> Your City, Country</p>
+            </div>
+    
+            <!-- Contact Form -->
+            <form id="contactForm">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn2">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Name | Designed with ❤️</p>
+    </footer>
+
+</body>
+</html>

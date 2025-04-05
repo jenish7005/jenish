@@ -1,0 +1,738 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Scroll Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #1f1f1f;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.5s;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.btn {
+    background: #f39c12;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e67e22;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('ban1.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    animation: slideInLeft 1s ease-out;
+}
+
+
+.hero-right {
+    flex: 1;
+    text-align: left;
+    animation: slideInRight 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn.primary {
+    background: #161515;
+    border: 2px solid #f39c12;
+    color: #f99d15;
+}
+
+.btn.primary:hover {
+    background: #e67e22;
+    color: #fff;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #f39c12;
+    color: #f39c12;
+}
+
+.btn.secondary:hover {
+    background: #f39c12;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px rgba(237, 15, 15, 0.3);
+    transform: perspective(500px) rotateY (10deg);
+    transition: transform 0.1s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: perspective(50px) rotateY(0.3s) scale(1.3);
+    box-shadow: 15px 15px 25px rgba(7, 177, 228, 0.5);
+}
+
+/* Fullscreen About Section */
+/* Fullscreen About Section */
+.about {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    overflow: hidden;
+}
+
+/* Animated Gradient Wave Background */
+.about::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('ban.jpg'); /* Replace with a real wave SVG */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    animation: waveMove 6s infinite linear alternate;
+}
+
+@keyframes waveMove {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(20px); }
+}
+
+/* Floating Neon Card */
+.about-container {
+    position: relative;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(255, 165, 0, 0.4);
+    border: 2px solid rgba(8, 168, 241, 0.6);
+    transform: rotateX(0deg);
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s;
+}
+
+/* Flip Effect on Hover */
+.about-container:hover {
+    transform: perspective(1000px) rotateX(5deg);
+    box-shadow: 0px 0px 40px rgba(235, 139, 5, 0.7);
+}
+
+/* Animated Heading */
+.about-text h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #ff9800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 20px rgba(255, 132, 0, 0.8);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1.2s ease-in-out forwards 0.5s;
+}
+
+/* Staggered Fade-in for Text */
+.about-text p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-in-out forwards 0.8s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Soft Bounce Hover Effect */
+.about-container:hover {
+    animation: bounce 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-5px); }
+}
+
+/* Full-Screen Skills Section */
+.skills {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #1b1b1b, #222831, #393e46);
+    color: white;
+    overflow: hidden;
+}
+
+/* Background Floating Particles */
+.skills::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('ban2.jpg'); /* Subtle texture */
+    opacity: 0.1;
+    animation: floatParticles 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatParticles {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-20px); }
+}
+
+/* Skills Heading */
+.skills h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    width: 80%;
+    z-index: 1;
+}
+
+/* Glassmorphism Skill Cards */
+.skill-card {
+    font-size: 1.4rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px 40px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease-in-out, box-shadow 0.4s;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s ease-in-out forwards;
+}
+
+/* Hover Effect - Glow and Scale */
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Animation for Staggered Entry */
+.skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skill-card:nth-child(2) { animation-delay: 0.4s; }
+.skill-card:nth-child(3) { animation-delay: 0.6s; }
+.skill-card:nth-child(4) { animation-delay: 0.8s; }
+.skill-card:nth-child(5) { animation-delay: 1s; }
+.skill-card:nth-child(6) { animation-delay: 1.2s; }
+
+/* Fade-in and Scale Effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Projects */
+/* Full-Screen Projects Section */
+.projects {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #121212, #1f1f1f);
+    color: white;
+    overflow: hidden;
+    padding: 50px 10%;
+}
+
+/* Heading Style */
+.projects h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff9100;
+    text-shadow: 0px 0px 15px rgba(255, 145, 0, 0.8);
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* 3D Flip Card */
+.project-card {
+    position: relative;
+    perspective: 1200px;
+    cursor: pointer;
+    width: 100%;
+    height: 250px;
+}
+
+.project-card:hover .project-inner {
+    transform: rotateY(180deg);
+}
+
+/* Inner Card (Flipping Effect) */
+.project-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Front & Back of Card */
+.project-front, .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 145, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Front Side */
+.project-front {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-front h3 {
+    font-size: 1.5rem;
+    color: #ff9100;
+    text-shadow: 0px 0px 10px rgba(255, 145, 0, 0.8);
+    opacity: 0;
+    animation: fadeInText 0.5s ease-in-out 0.2s forwards;
+}
+
+.project-front p {
+    font-size: 1rem;
+    color: #ddd;
+    opacity: 0;
+    padding: 10px;
+    animation: fadeInText 0.7s ease-in-out 0.4s forwards;
+}
+
+/* Back Side */
+.project-back {
+    background: rgba(255, 145, 0, 0.2);
+    border: 2px solid rgba(255, 145, 0, 0.3);
+    transform: rotateY(180deg);
+    box-shadow: 0px 0px 15px rgba(255, 145, 0, 0.8);
+}
+
+.project-back p {
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0;
+    line-height: 1.6;
+    max-width: 90%;
+    animation: fadeInText 0.7s ease-in-out 0.5s forwards;
+}
+
+/* Hover Glow Effect */
+.project-card:hover .project-front,
+.project-card:hover .project-back {
+    box-shadow: 0px 0px 15px rgba(255, 145, 0, 0.5);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Text Fade-in Animation */
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Full-Screen Contact Section */
+.contact {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #1a1a1a, #2c2c2c);
+    color: #f1f1f1;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-in-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00ffd5;
+    animation: slideDown 1s ease;
+}
+
+/* My Info Styling */
+.my-info {
+    margin-bottom: 30px;
+    font-size: 18px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.my-info p {
+    margin: 10px 0;
+    color: #ccc;
+}
+
+/* Contact Form */
+#contactForm {
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: slideUp 1.2s ease;
+}
+
+#contactForm input,
+#contactForm textarea {
+    background: #333;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #00ffd5;
+    outline: none;
+    box-shadow: 0 0 10px #00ffd5;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+#contactForm button {
+    padding: 14px;
+    font-size: 18px;
+    background: #00ffd5;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+#contactForm button:hover {
+    background: #00bfa6;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideDown {
+    from {transform: translateY(-50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+ 
+/* Contact Section */
+.contact {
+    padding: 80px 20px;
+    background-color: #121212; /* Clean dark background */
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #00bcd4;
+}
+
+/* Two-Column Layout */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Left - Contact Info */
+.my-contact-info {
+    flex: 1;
+    min-width: 280px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.my-contact-info p {
+    margin: 12px 0;
+}
+
+.my-contact-info strong {
+    color: #00bcd4;
+    display: inline-block;
+    width: 100px;
+}
+
+/* Right - Contact Form */
+#contactForm {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 14px 16px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #2a2a2a;
+    color: #fff;
+    transition: border-color 0.3s;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: #aaa;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #00bcd4;
+    outline: none;
+}
+
+#contactForm textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#contactForm button {
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 8px;
+    color: #121212;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contactForm button:hover {
+    background-color: #0097a7;
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .my-contact-info,
+    #contactForm {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1f1f1f;
+    color: white;
+    transition: background 0.5s;
+}
+
